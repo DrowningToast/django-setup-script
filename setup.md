@@ -10,6 +10,9 @@ After running the script, please edit the .env file to configure your database.
 ```bash
 pip install virtualenv
 git clone https://github.com/DrowningToast/django-setup-script.git
+cd django-setup-script
+copy .env.example .env
+cd ..
 copy ./django-setup-script/.env.example ./django-setup-script/.env
 mkdir django
 cd django
