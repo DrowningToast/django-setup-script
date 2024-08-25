@@ -12,6 +12,7 @@ pip install virtualenv
 git clone https://github.com/DrowningToast/django-setup-script.git
 cd django-setup-script
 copy .env.example .env
+code .
 cd ..
 mkdir django
 cd django
@@ -38,5 +39,6 @@ pip install ipython==8.25.0 jupyter_server==2.14.1 jupyterlab==4.2.2 jupyterlab_
 pip install notebook==6.5.7
 
 git clone git@github.com:aaapwn/Server-Side-Web-Development.git
+code .
 
 ```
