@@ -12,6 +12,7 @@ pip install virtualenv
 git clone https://github.com/DrowningToast/django-setup-script.git
 copy ./django-setup-script/.env.example ./django-setup-script/.env
 mkdir django
+cd django
 ```
 
 # Run for start project setup
