@@ -3,6 +3,19 @@ But before that, ensure you're using venv and have node and docker installed.
 
 Edit database configuration in the .env file
 
+# Pre-installation script
+
+After running the script, please edit the .env file to configure your database.
+
+```bash
+pip install virtualenv
+git clone https://github.com/DrowningToast/django-setup-script.git
+copy ./django-setup-script/.env.example ./django-setup-script/.env
+mkdir django
+```
+
+# Run for start project setup
+
 ```bash
 py -m venv myvenv
 myvenv\Scripts\activate.bat
@@ -15,9 +28,7 @@ django-admin startproject PROJECT_NAME
 pip install psycopg2
 pip install psycopg2-binary
 
-curl https://raw.githubusercontent.com/DrowningToast/django-setup-script/main/docker-compose.yml --output ./docker-compose.yml
-
-docker-compose -f docker-compose.yml up -d --build
+docker-compose -f ../django-setup-script/docker-compose.yml up -d --build
 
 pip install django-extensions ipython jupyter notebook
 pip install ipython==8.25.0 jupyter_server==2.14.1 jupyterlab==4.2.2 jupyterlab_server==2.27.2
