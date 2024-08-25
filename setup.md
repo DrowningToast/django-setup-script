@@ -15,6 +15,8 @@ django-admin startproject PROJECT_NAME
 pip install psycopg2
 pip install psycopg2-binary
 
+curl https://raw.githubusercontent.com/DrowningToast/django-setup-script/main/docker-compose.yml --output ./docker-compose.yml
+
 docker-compose -f docker-compose.yml up -d --build
 
 pip install django-extensions ipython jupyter notebook
