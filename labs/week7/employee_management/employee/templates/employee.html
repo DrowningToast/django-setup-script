@@ -1,0 +1,60 @@
+{% extends "layout.html" %} {% load humanize %} {% block title %}
+<title>Employee</title>
+{% endblock title %} 
+{% block head %}
+	<div class="head"><h1>Employee</h1></div>
+	<div class>
+		<!-- จำนวนพนักงานทั้งหมด -->
+		<h1>Total {{ count }} People</h1>
+	</div>
+{% endblock head %} 
+{% block content %}
+	<main>
+		<!-- 
+					** Hit if และ for ให้ถูกต้อง
+				-->
+
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Full Name</th>
+					<th>Genger</th>
+					<th>Birth Date</th>
+					<th>Hire Date</th>
+					<th>Salary</th>
+					<th>Department</th>
+					<th>Position</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				{% for employee in employees %}
+				<tr
+					style="
+					color:{% if forloop.first or forloop.last %}red{% else %}black{% endif %}"
+				>
+					<!-- employee id -->
+					<td>{{employee.id}}</td>
+					<!-- ชื่อ นามสกุล -->
+					<td>{{employee.first_name}} {{employee.last_name}}</td>
+					<!-- เพศ -->
+					<td>
+						{% if employee.gender == "M" %} Male {% else %} Female {% endif %}
+					</td>
+					<!-- วันเกิด -->
+					<td>{{employee.birth_date|date:"d/m/y"}}</td>
+					<!-- วันเริ่มงาน -->
+					<td>{{employee.hire_date|date:"d/m/y"}}</td>
+					<!-- เงินเดือน -->
+					<td>{{employee.salary|intcomma}}</td>
+					<!-- แผนก -->
+					<td>{{employee.position.name}}</td>
+					<!-- ตำแหน่งงาน -->
+					<td>{{employee.position.name}}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</main>
+{% endblock content %}
