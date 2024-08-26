@@ -37,6 +37,7 @@ docker-compose -f ../django-setup-script/docker-compose.yml up -d --build
 python -m pip install django-extensions ipython jupyter notebook
 python -m pip install ipython==8.25.0 jupyter_server==2.14.1 jupyterlab==4.2.2 jupyterlab_server==2.27.2
 python -m pip install notebook==6.5.7
+python -m pip install humanize
 
 git clone git@github.com:aaapwn/Server-Side-Web-Development.git
 code .
